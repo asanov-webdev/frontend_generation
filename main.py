@@ -4,7 +4,7 @@ from multiprocessing import Pool
 
 processes = []
 config = open('config.txt')
-react_app_name = ''
+react_app_name = 'coolreactapp'
 
 
 def get_react_app_name():
@@ -36,10 +36,7 @@ def generate_app():
         pool.map(run_process, processes)
 
 
-def add_request():
-    function_name = input_parts[1].split('=')[1]
-    request_type = input_parts[2].split('=')[1]
-    url = input_parts[3].split('=')[1]
+def add_request(function_name, request_type, url):
 
     f = open('requestTemplate.txt', 'r')
     text = f.read()
